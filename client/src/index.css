@@ -1,0 +1,92 @@
+@layer utilities {
+	.animate-sun-glow {
+		animation: sunGlow 8s ease-in-out infinite alternate;
+	}
+	.animate-cloud-move5 {
+		animation: cloudMove5 38s linear infinite alternate;
+	}
+	.animate-cloud-move6 {
+		animation: cloudMove6 44s linear infinite alternate;
+	}
+}
+
+@keyframes sunGlow {
+	0% { opacity: 0.3; filter: blur(60px); }
+	100% { opacity: 0.5; filter: blur(80px); }
+}
+@keyframes cloudMove5 {
+	0% { left: 25vw; top: 50vh; }
+	100% { left: 60vw; top: 60vh; }
+}
+@keyframes cloudMove6 {
+	0% { right: 33vw; top: 33vh; }
+	100% { right: 10vw; top: 40vh; }
+}
+@layer utilities {
+	.animate-cloud-move1 {
+		animation: cloudMove1 32s linear infinite alternate;
+	}
+	.animate-cloud-move2 {
+		animation: cloudMove2 40s linear infinite alternate;
+	}
+	.animate-cloud-move3 {
+		animation: cloudMove3 36s linear infinite alternate;
+	}
+	.animate-cloud-move4 {
+		animation: cloudMove4 28s linear infinite alternate;
+	}
+}
+
+@keyframes cloudMove1 {
+	0% { left: 10px; top: 10px; }
+	100% { left: 60vw; top: 30px; }
+}
+@keyframes cloudMove2 {
+	0% { right: 20px; top: 32px; }
+	100% { right: 60vw; top: 80px; }
+}
+@keyframes cloudMove3 {
+	0% { left: 50vw; bottom: 10px; }
+	100% { left: 10vw; bottom: 60px; }
+}
+@keyframes cloudMove4 {
+	0% { right: 25vw; bottom: 24px; }
+	100% { right: 5vw; bottom: 80px; }
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+	.animate-float {
+		animation: float 3s ease-in-out infinite;
+	}
+	.animate-fade-in {
+		animation: fadeIn 1s both;
+	}
+	.animate-underline {
+		animation: underlineGrow 0.5s cubic-bezier(0.4,0,0.2,1) both;
+	}
+	.animate-gradient-x {
+		animation: gradientX 12s ease-in-out infinite alternate;
+	}
+}
+
+@keyframes float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-16px); }
+}
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(24px); }
+	to { opacity: 1; transform: none; }
+}
+@keyframes underlineGrow {
+	from { width: 0; opacity: 0; }
+	to { width: 100%; opacity: 1; }
+}
+@keyframes gradientX {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}

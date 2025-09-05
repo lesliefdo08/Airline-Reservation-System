@@ -1,0 +1,39 @@
+// API utility for Airline Reservation System
+const API_BASE = "http://localhost:5000/api";
+
+export async function login(data) {
+  const res = await fetch(`${API_BASE}/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+export async function register(data) {
+  const res = await fetch(`${API_BASE}/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+export async function getFlights() {
+  const res = await fetch(`${API_BASE}/flights`);
+  return res.json();
+}
+
+export async function bookFlight(data) {
+  const res = await fetch(`${API_BASE}/book`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+export async function getBookings() {
+  const res = await fetch(`${API_BASE}/bookings`);
+  return res.json();
+}
