@@ -64,21 +64,21 @@ export default function Flights() {
 
   return (
     <SkyBackground>
-      <div className="container mx-auto relative z-20 py-12 px-2">
-        <h2 className="text-4xl font-extrabold mb-8 text-teal-200 drop-shadow">Available Flights</h2>
+      <div className="container mx-auto relative z-20 py-8 px-2 sm:py-12 sm:px-4">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-6 sm:mb-8 md:mb-8 text-teal-200 drop-shadow">Available Flights</h2>
         {flights.length === 0 ? (
           <div className="text-center text-gray-100">No flights found.</div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
             {flights.map(flight => (
-              <div key={getId(flight)} className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 hover:scale-105 hover:shadow-2xl transition-all duration-200 border-t-4 border-teal-400">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="font-semibold text-lg text-white">{flight.from} &rarr; {flight.to}</span>
-                  <span className="text-teal-200 font-bold text-xl">{flight.price}</span>
+              <div key={getId(flight)} className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 hover:scale-105 hover:shadow-2xl transition-all duration-200 border-t-4 border-teal-400">
+                <div className="flex flex-col sm:flex-row justify-between items-center mb-2 gap-1 sm:gap-0">
+                  <span className="font-semibold text-base sm:text-lg text-white">{flight.from} &rarr; {flight.to}</span>
+                  <span className="text-teal-200 font-bold text-lg sm:text-xl">{flight.price}</span>
                 </div>
-                <div className="text-gray-100 mb-2">Date: <b>{flight.date}</b> | Time: <b>{flight.time}</b></div>
+                <div className="text-gray-100 mb-2 text-sm sm:text-base">Date: <b>{flight.date}</b> | Time: <b>{flight.time}</b></div>
                 <button
-                  className="bg-teal-400 text-blue-900 px-6 py-2 rounded-full font-bold mt-2 hover:bg-teal-500 hover:text-white transition-all shadow-lg"
+                  className="bg-teal-400 text-blue-900 px-4 py-2 sm:px-6 rounded-full font-bold mt-2 hover:bg-teal-500 hover:text-white transition-all shadow-lg text-sm sm:text-base"
                   onClick={() => handleBook(flight)}
                 >
                   Book Now
@@ -90,21 +90,21 @@ export default function Flights() {
 
         {/* Booking Modal */}
         {showModal && selected && (
-          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 animate-fade-in">
+          <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 animate-fade-in px-2">
             {loading ? (
-              <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full border-t-4 border-teal-400 flex items-center justify-center min-h-[200px]">
+              <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-xs sm:max-w-md w-full border-t-4 border-teal-400 flex items-center justify-center min-h-[200px]">
                 <Spinner />
               </div>
             ) : (
-              <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full border-t-4 border-teal-400 relative">
+              <div className="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 max-w-xs sm:max-w-md w-full border-t-4 border-teal-400 relative">
                 <button className="absolute top-2 right-3 text-2xl text-gray-400 hover:text-red-500" onClick={() => setShowModal(false)}>&times;</button>
-                <h3 className="text-2xl font-bold mb-4 text-blue-800">{showPayment ? "Payment" : "Confirm Booking"}</h3>
-                <div className="mb-4 text-gray-700">
+                <h3 className="text-xl sm:text-2xl font-bold mb-4 text-blue-800">{showPayment ? "Payment" : "Confirm Booking"}</h3>
+                <div className="mb-4 text-gray-700 text-sm sm:text-base">
                   <div><b>From:</b> {selected.from}</div>
                   <div><b>To:</b> {selected.to}</div>
                   <div><b>Date:</b> {selected.date}</div>
                   <div><b>Time:</b> {selected.time}</div>
-                  <div><b>Price:</b> {selected.price}</div>
+                  <div><b>Price:</b> {selected.price}</div>
                 </div>
                 {/* Seat selection */}
                 {seatMap?.length > 0 && !showPayment && !bookingSuccess && (
@@ -114,15 +114,15 @@ export default function Flights() {
                   </div>
                 )}
                 {bookingSuccess ? (
-                  <div className="text-green-600 font-bold text-lg animate-fade-in">Booking Confirmed!</div>
+                  <div className="text-green-600 font-bold text-base sm:text-lg animate-fade-in">Booking Confirmed!</div>
                 ) : showPayment ? (
                   <div>
                     <div className="mb-4 text-center">
-                      <span className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-bold mb-2">Secure Payment Gateway</span>
-                      <div className="text-gray-500 text-sm mb-2">Your payment is processed securely and your booking is confirmed instantly.</div>
+                      <span className="inline-block bg-blue-100 text-blue-800 px-3 py-2 sm:px-4 sm:py-2 rounded-full font-bold mb-2 text-xs sm:text-base">Secure Payment Gateway</span>
+                      <div className="text-gray-500 text-xs sm:text-sm mb-2">Your payment is processed securely and your booking is confirmed instantly.</div>
                     </div>
                     <button
-                      className="w-full bg-teal-400 text-blue-900 py-2 rounded-full font-bold hover:bg-teal-500 hover:text-white transition mb-2 disabled:opacity-60"
+                      className="w-full bg-teal-400 text-blue-900 py-2 rounded-full font-bold hover:bg-teal-500 hover:text-white transition mb-2 disabled:opacity-60 text-sm sm:text-base"
                       onClick={handlePayment}
                       disabled={paymentProcessing || selectedSeat === null}
                     >
@@ -131,7 +131,7 @@ export default function Flights() {
                     </button>
                   </div>
                 ) : (
-                  <button className="w-full bg-blue-700 text-white py-2 rounded-full font-bold hover:bg-blue-900 transition" onClick={() => setShowPayment(true)} disabled={selectedSeat === null}>
+                  <button className="w-full bg-blue-700 text-white py-2 rounded-full font-bold hover:bg-blue-900 transition text-sm sm:text-base" onClick={() => setShowPayment(true)} disabled={selectedSeat === null}>
                     Proceed to Payment
                   </button>
                 )}

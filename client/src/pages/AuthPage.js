@@ -55,9 +55,9 @@ export default function AuthPage() {
 
   return (
     <SkyBackground>
-      <div className="flex flex-col items-center justify-center min-h-[70vh] z-20 relative py-8 px-2">
-        <div className="bg-white/90 p-6 md:p-10 rounded-3xl shadow-2xl w-full max-w-md border-t-4 border-blue-700 animate-fade-in backdrop-blur-md">
-          <div className="flex justify-center mb-6 flex-wrap">
+      <div className="flex flex-col items-center justify-center min-h-[70vh] z-20 relative py-6 px-2 sm:py-8 sm:px-4">
+        <div className="bg-white/90 p-4 sm:p-6 md:p-10 rounded-3xl shadow-2xl w-full max-w-xs sm:max-w-md border-t-4 border-blue-700 animate-fade-in backdrop-blur-md">
+          <div className="flex justify-center mb-4 sm:mb-6 flex-wrap">
             <button
               className={`px-4 py-2 font-bold rounded-l-2xl transition-all text-base md:text-lg ${mode === "login" ? "bg-blue-700 text-white" : "bg-blue-100 text-blue-700"}`}
               onClick={() => { setMode("login"); setError(""); setSuccess(false); }}
