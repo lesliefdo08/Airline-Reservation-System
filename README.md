@@ -1,6 +1,6 @@
 # ✈️ Airline Reservation System
 
-A modern, full-stack Airline Reservation System built with React, Tailwind CSS, Node.js, and PostgreSQL (Neon). Features include flight booking, seat selection, booking management, admin dashboard, and production-ready deployment.
+A modern, full-stack Airline Reservation System built with React, Tailwind CSS, and Node.js. Perfect for demos with in-memory data storage - no database setup required!
 
 ## Features
 - User registration and login (single page)
@@ -10,41 +10,30 @@ A modern, full-stack Airline Reservation System built with React, Tailwind CSS, 
 - Real-time flight status
 - Admin dashboard for managing flights and bookings
 - Live chat support with FAQ and AI-ready integration
-- Mobile responsive, modern UI with blue/teal branding
-- Documentation: FAQ, Help, Admin Guide
+- Mobile responsive, modern UI with blue branding
+- **Zero configuration** - works out of the box!
 
 ## Getting Started
 
 ### Prerequisites
-- Node.js (v18+ recommended)
-- Neon PostgreSQL account (free tier: https://neon.tech)
+- Node.js (v16+ recommended)
 - npm or yarn
+- **That's it! No database needed!**
 
 ### Installation
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/your-username/your-repo.git
-   cd Airline\ Reservation\ System
+   git clone https://github.com/lesliefdo08/Airline-Reservation-System.git
+   cd Airline-Reservation-System
    ```
-2. **Setup Neon Database:**
-   - Create account at https://console.neon.tech/
-   - Create new project: "Airline Reservation System"
-   - Copy your connection string (starts with `postgresql://`)
 
-3. **Install backend dependencies:**
+2. **Install backend dependencies:**
    ```sh
    cd server
    npm install
    ```
 
-4. **Configure backend environment:**
-   - Create `.env` file in `server` folder:
-     ```env
-     DATABASE_URL=postgresql://username:password@host/database?sslmode=require
-     PORT=5000
-     ```
-
-5. **Install frontend dependencies:**
+3. **Install frontend dependencies:**
    ```sh
    cd ../client
    npm install
@@ -57,23 +46,23 @@ A modern, full-stack Airline Reservation System built with React, Tailwind CSS, 
    npm start
    ```
    Backend will:
-   - Connect to Neon database
-   - Create tables (users, flights, bookings, payments)
-   - Seed demo data (3 users, 15 flights)
+   - Load demo data into memory (3 users, 15 flights)
    - Run on http://localhost:5000
+   - Ready instantly - no database needed!
 
 2. **Start the frontend:**
    ```sh
    cd ../client
-   npm run dev
+   npm start
    ```
-   Frontend will run on http://localhost:5173
+   Frontend will run on http://localhost:3000
 
 3. **Test the application:**
    - Login with demo account
    - Search and book flights
    - View bookings
    - Cancel bookings
+   - All data persists during the session!
 
 ### Demo Accounts
 All demo accounts use simple passwords for testing:
@@ -89,12 +78,22 @@ All demo accounts use simple passwords for testing:
 ## Project Structure
 ```
 Airline Reservation System/
-  client/    # React frontend
-  server/    # Node.js/Express backend
+  client/    # React frontend (port 3000)
+  server/    # Node.js/Express backend (port 5000)
+           # Uses in-memory storage - perfect for demos!
   SRS Airline Reservation System.pdf
   .gitignore
   README.md
 ```
+
+## Why In-Memory Storage?
+- ✅ **Zero Configuration:** Works immediately, no database setup
+- ✅ **Perfect for Demos:** Show all features without complexity
+- ✅ **Fast Development:** Instant startup, no external dependencies
+- ✅ **Easy Testing:** Clean state on every restart
+- ✅ **Portable:** Run anywhere Node.js works
+
+**Note:** Data resets when server restarts. Perfect for demonstrations!
 
 ## Documentation
 - FAQ, Help, and Admin Guide are available in the app.
