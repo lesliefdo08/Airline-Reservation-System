@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-8 sm:py-10 md:py-16 bg-gradient-to-r from-blue-900 via-blue-700 to-cyan-400 text-center">
+      <section className="py-8 sm:py-10 md:py-16 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 text-center">
         <h2 className="text-xl sm:text-2xl md:text-4xl font-extrabold text-white mb-4 sm:mb-6 animate-fade-in">Ready to experience the future of airline booking?</h2>
         <a href="/register" className="inline-block bg-teal-400 text-blue-900 font-bold px-5 py-2 sm:px-6 sm:py-3 md:px-10 md:py-4 rounded-full shadow-lg hover:bg-teal-500 hover:scale-105 transition-all duration-200 animate-fade-in delay-300 text-base sm:text-lg">
           Get Started Now
