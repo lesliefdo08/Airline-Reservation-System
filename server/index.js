@@ -261,13 +261,10 @@ app.get('/api/bookings', async (req, res) => {
           b.status,
           b.created_at,
           f.id as flight_id,
-          f.flight_number,
           f.from_city,
           f.to_city,
-          f.departure_date,
-          f.departure_time,
-          f.arrival_date,
-          f.arrival_time,
+          f.date,
+          f.time,
           f.price
         FROM bookings b
         JOIN flights f ON b.flight_id = f.id
@@ -284,13 +281,10 @@ app.get('/api/bookings', async (req, res) => {
           b.status,
           b.created_at,
           f.id as flight_id,
-          f.flight_number,
           f.from_city,
           f.to_city,
-          f.departure_date,
-          f.departure_time,
-          f.arrival_date,
-          f.arrival_time,
+          f.date,
+          f.time,
           f.price
         FROM bookings b
         JOIN flights f ON b.flight_id = f.id
@@ -308,13 +302,10 @@ app.get('/api/bookings', async (req, res) => {
       createdAt: b.created_at,
       flight: {
         _id: b.flight_id,
-        flightNumber: b.flight_number,
         from: b.from_city,
         to: b.to_city,
-        departureDate: b.departure_date,
-        departureTime: b.departure_time,
-        arrivalDate: b.arrival_date,
-        arrivalTime: b.arrival_time,
+        date: b.date,
+        time: b.time,
         price: b.price
       }
     }));
