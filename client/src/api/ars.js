@@ -37,3 +37,10 @@ export async function getBookings() {
   const res = await fetch(`${API_BASE}/bookings`);
   return res.json();
 }
+
+export async function getSeatMap(flightId) {
+  const res = await fetch(`${API_BASE}/flights/${flightId}/seats`);
+  return res.json();
+}
+
+export const bookFlightWithSeat = bookFlight;

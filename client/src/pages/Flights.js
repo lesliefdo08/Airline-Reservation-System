@@ -5,7 +5,7 @@ import { useBooking } from "../context/BookingContext";
 import { useAuth } from "../context/AuthContext";
 import SkyBackground from "../components/SkyBackground";
 import SeatMap from "../components/SeatMap";
-import { getSeatMap, bookFlightWithSeat } from "../api/seats";
+import { getSeatMap, bookFlightWithSeat } from "../api/ars";
 
 const getId = obj => obj?._id || obj?.id;
 

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Spinner from "../components/Spinner";
 import { useBooking } from "../context/BookingContext";
 import { useAuth } from "../context/AuthContext";
-import { getSeatMap } from "../api/seats";
+import { getSeatMap } from "../api/ars";
 import SkyBackground from "../components/SkyBackground";
 
 const getId = obj => obj?._id || obj?.id || obj;

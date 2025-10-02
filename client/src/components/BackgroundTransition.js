@@ -12,15 +12,11 @@ const gradients = [
 export default function BackgroundTransition({ children }) {
   const [index, setIndex] = useState(0);
   const location = useLocation();
-
-  // Only use blue gradient for login and register pages
   const isAuthPage = location.pathname === "/login" || location.pathname === "/register";
 
   useEffect(() => {
     if (!isAuthPage) {
-      const interval = setInterval(() => {
-        setIndex((i) => (i + 1) % gradients.length);
-      }, 7000);
+      const interval = setInterval(() => setIndex((i) => (i + 1) % gradients.length), 7000);
       return () => clearInterval(interval);
     }
   }, [isAuthPage]);

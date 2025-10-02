@@ -95,6 +95,7 @@ export default function AuthPage() {
                 required
               />
               <button
+                data-cy="login-btn"
                 className="w-full bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-900 transition font-bold text-lg disabled:opacity-60 shadow-md"
                 disabled={loading}
               >
