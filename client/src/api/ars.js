@@ -1,5 +1,6 @@
 // API utility for Airline Reservation System
-const API_BASE = "http://localhost:5000/api";
+// Use environment variable for production, fallback to localhost for development
+const API_BASE = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 export async function login(data) {
   const res = await fetch(`${API_BASE}/login`, {
